@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Plan Zajec</string>
+    <string name="preferences">Preferences</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="day_monday">Monday</string>
+    <string name="day_tuesday">Tuesday</string>
+    <string name="day_wednesday">Wednesday</string>
+    <string name="day_thursday">Thursday</string>
+    <string name="day_friday">Friday</string>
+    <string name="day_saturday">Saturday</string>
+    <string name="day_sunday">Sunday</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="lesson_beginTime">Begin time</string>
+    <string name="lesson_endTime">End time</string>
+    <string name="lesson_name">Lesson name</string>
+    <string name="lesson_classroom">Classroom</string>
+    <string name="lesson_teacher">Teacher</string>
+    <string name="lesson_type">Lesson type</string>
+    <string name="lesson_type2">Lesson type 2</string>
+    <string name="add">Add</string>
+    <string name="example_name">Example lesson name</string>
+    <string name="example_beginTime" translatable="false">12:00</string>
+    <string name="example_endTime" translatable="false">12:45</string>
+    <string name="example_classroom" translatable="false">123</string>
+    <string name="example_teacher">Example teacher</string>
+    <string name="are_you_sure">Are you sure you want to delete</string>
+</resources>

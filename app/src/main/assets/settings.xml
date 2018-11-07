@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <timetable>timetable1.xml</timetable>
+    <visibleMonday>true</visibleMonday>
+    <visibleTuesday>true</visibleTuesday>
+    <visibleWednesday>true</visibleWednesday>
+    <visibleThursday>true</visibleThursday>
+    <visibleFriday>true</visibleFriday>
+    <visibleSaturday>false</visibleSaturday>
+    <visibleSunday>false</visibleSunday>
+
+</settings>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timetable>
+    <monday>
+        <lesson>
+            <beginTime>15:15</beginTime>
+            <endTime>16:45</endTime>
+            <name>Fizyka dla informatyków/Algebra dla informatyków</name>
+            <classroom>405</classroom>
+            <teacher>dr. W. Królikowski</teacher>
+            <type>W</type>
+            <type2>normal</type2>
+        </lesson>
+        <lesson>
+            <beginTime>17:00</beginTime>
+            <endTime>18:30</endTime>
+            <name>Systemy wbudowane</name>
+            <classroom>323</classroom>
+            <teacher>mgr inż R. Kapturski</teacher>
+            <type>L</type>
+            <type2>normal</type2>
+        </lesson>
+        <lesson>
+            <beginTime>18:45</beginTime>
+            <endTime>20:15</endTime>
+            <name>Fizyka dla informatyków/Algebra dla informatyków</name>
+            <classroom>405</classroom>
+            <teacher>dr. W. Królikowski</teacher>
+            <type>K</type>
+            <type2>normal</type2>
+        </lesson>
+    </monday>
+
+    <tuesday>
+    </tuesday>
+
+    <wednesday>
+        <lesson>
+            <beginTime>8:15</beginTime>
+            <endTime>9:45</endTime>
+            <name>Projekt dyplomowy 2</name>
+            <classroom>303</classroom>
+            <teacher>dr S. Wojczyk</teacher>
+            <type>L</type>
+            <type2>normal</type2>
+        </lesson>
+        <lesson>
+            <beginTime>11:45</beginTime>
+            <endTime>13:15</endTime>
+            <name>Podstawy elektroniki i elektrotechniki</name>
+            <classroom>308</classroom>
+            <teacher>dr inż. S. Wszelak</teacher>
+            <type>W</type>
+            <type2>normal</type2>
+        </lesson>
+        <lesson>
+            <beginTime>13:30</beginTime>
+            <endTime>15:00</endTime>
+            <name>Inżynierski projekt zespołowy 2</name>
+            <classroom>324</classroom>
+            <teacher>dr inż. S. Wszelak</teacher>
+            <type>L</type>
+            <type2>normal</type2>
+        </lesson>
+        <lesson>
+            <beginTime>15:15</beginTime>
+            <endTime>16:45</endTime>
+            <name>Sztuczna inteligencja</name>
+            <classroom>405</classroom>
+            <teacher>dr S. Wojczyk</teacher>
+            <type>W</type>
+            <type2>normal</type2>
+        </lesson>
+        <lesson>
+            <beginTime>18:45</beginTime>
+            <endTime>20:15</endTime>
+            <name>Sztuczna inteligencja</name>
+            <classroom>324</classroom>
+            <teacher>mgr inż. M. Bońkowski</teacher>
+            <type>L</type>
+            <type2>normal</type2>
+        </lesson>
+    </wednesday>
+
+    <thursday>
+
+    </thursday>
+
+    <friday>
+        <lesson>
+            <beginTime>10:00</beginTime>
+            <endTime>11:30</endTime>
+            <name>Systemy wbudowane</name>
+            <classroom>405</classroom>
+            <teacher>dr inż. T. Koszmider</teacher>
+            <type>W</type>
+            <type2>normal</type2>
+        </lesson>
+        <lesson>
+            <beginTime>17:00</beginTime>
+            <endTime>18:30</endTime>
+            <name>Podstawy elektroniki i elektrotechniki</name>
+            <classroom>313</classroom>
+            <teacher>mgr inż. M. Bońkowski</teacher>
+            <type>K</type>
+            <type2>normal</type2>
+        </lesson>
+    </friday>
+
+    <saturday>
+
+    </saturday>
+
+    <sunday>
+
+    </sunday>
+</timetable>

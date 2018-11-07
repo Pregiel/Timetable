@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Plan zajęć</string>
+    <string name="preferences">Opcje</string>
+    <string name="day_monday">Poniedziałek</string>
+    <string name="day_tuesday">Wtorek</string>
+    <string name="day_wednesday">Środa</string>
+    <string name="day_thursday">Czwartek</string>
+    <string name="day_friday">Piątek</string>
+    <string name="day_saturday">Sobota</string>
+    <string name="day_sunday">Niedziela</string>
+    <string name="edit">Edytuj</string>
+    <string name="delete">Usuń</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Anuluj</string>
+    <string name="lesson_beginTime">Czas rozpoczęcia</string>
+    <string name="lesson_endTime">Czas zakończenia</string>
+    <string name="lesson_name">Nazwa zajęć</string>
+    <string name="lesson_classroom">Sala</string>
+    <string name="lesson_teacher">Nauczyciel</string>
+    <string name="lesson_type">Rodzaj zajęć</string>
+    <string name="lesson_type2">Rodzaj zajęć 2</string>
+    <string name="add">Dodaj</string>
+    <string name="example_name">Przykładowa nazwa zajęć</string>
+    <string name="example_teacher">Przykładowy wykładowca</string>
+    <string name="are_you_sure">Czy na pewno chcesz usunąć</string>
+</resources>
