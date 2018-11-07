@@ -7,15 +7,14 @@ package com.pregiel.planzajec;
 public class Settings {
     private String currentTimetable;
     private boolean[] visibleDays;
+    private int firstWarning, secondWarning, thirdWarning;
 
     public Settings() {
         this.currentTimetable = "timatable1.xml";
         this.visibleDays = new boolean[]{true, true, true, true, true, true, true};
-    }
-
-    public Settings(String currentTimetable, boolean[] visibleDays) {
-        this.currentTimetable = currentTimetable;
-        this.visibleDays = visibleDays;
+        this.firstWarning = 1;
+        this.secondWarning = 2;
+        this.thirdWarning = 3;
     }
 
     public String getCurrentTimetable() {
@@ -32,5 +31,29 @@ public class Settings {
 
     public void setVisibleDays(boolean[] visibleDays) {
         this.visibleDays = visibleDays;
+    }
+
+    public int getFirstWarning() {
+        return firstWarning;
+    }
+
+    public void setFirstWarning(int firstWarning) {
+        this.firstWarning = firstWarning;
+    }
+
+    public int getSecondWarning() {
+        return secondWarning;
+    }
+
+    public void setSecondWarning(int secondWarning) {
+        this.secondWarning = secondWarning;
+    }
+
+    public int getThirdWarning() {
+        return thirdWarning;
+    }
+
+    public void setThirdWarning(int thirdWarning) {
+        this.thirdWarning = thirdWarning;
     }
 }

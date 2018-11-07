@@ -24,4 +24,9 @@
     <string name="example_name">Przykładowa nazwa zajęć</string>
     <string name="example_teacher">Przykładowy wykładowca</string>
     <string name="are_you_sure">Czy na pewno chcesz usunąć</string>
+    <string name="absence">Nieobecności:</string>
+    <string name="add_absence">Dodaj nieobecność</string>
+    <string name="absence_date">Dzień nieobecności</string>
+    <string name="remove_absence">Usuń nieobecności</string>
+    <string name="are_you_sure_absence">Czy na pewno chcesz usunąć wszystkie nieobecności w</string>
 </resources>

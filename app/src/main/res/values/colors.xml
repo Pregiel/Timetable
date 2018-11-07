@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="absence_safe">#e0e0e0</color>
+    <color name="absence_first">#0d9800</color>
+    <color name="absence_second">#e4ab00</color>
+    <color name="absence_third">#f10c00</color>
+    <color name="absence_last">#000000</color>
 </resources>

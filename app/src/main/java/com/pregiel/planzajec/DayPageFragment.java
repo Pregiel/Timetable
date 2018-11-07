@@ -38,6 +38,11 @@ public class DayPageFragment extends Fragment {
         // Required empty public constructor
     }
     private PopupMenu popupMenu;
+    private LessonsAdapter adapter;
+
+    public LessonsAdapter getAdapter() {
+        return adapter;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,7 +54,7 @@ public class DayPageFragment extends Fragment {
 
 
         Bundle bundle = getArguments();
-        final LessonsAdapter adapter = new LessonsAdapter(this, MainActivity.dayList.get(bundle.getInt("currentday")), bundle.getInt("currentday"));
+        adapter = new LessonsAdapter(this, MainActivity.dayList.get(bundle.getInt("currentday")), bundle.getInt("currentday"));
 
         final ListView listView = view.findViewById(R.id.listview);
         listView.setAdapter(adapter);

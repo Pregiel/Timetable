@@ -28,4 +28,9 @@
     <string name="example_classroom" translatable="false">123</string>
     <string name="example_teacher">Example teacher</string>
     <string name="are_you_sure">Are you sure you want to delete</string>
+    <string name="absence">Absence:</string>
+    <string name="add_absence">Add absence</string>
+    <string name="absence_date">Absence date</string>
+    <string name="remove_absence">Remove absence</string>
+    <string name="are_you_sure_absence">Are you sure you want to delete all absences in</string>
 </resources>

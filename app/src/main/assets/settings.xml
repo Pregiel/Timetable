@@ -8,5 +8,8 @@
     <visibleFriday>true</visibleFriday>
     <visibleSaturday>false</visibleSaturday>
     <visibleSunday>false</visibleSunday>
+    <firstWarning>1</firstWarning>
+    <secondWarning>2</secondWarning>
+    <thirdWarning>3</thirdWarning>
 
 </settings>

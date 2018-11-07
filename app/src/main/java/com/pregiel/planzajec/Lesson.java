@@ -1,5 +1,8 @@
 package com.pregiel.planzajec;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Pregiel on 14.02.2018.
  */
@@ -12,16 +15,7 @@ public class Lesson {
     private String teacher;
     private String type;
     private String type2;
-
-    public Lesson(String begin, String end, String name, String classroom, String teacher, String type, String type2) {
-        this.begin = begin;
-        this.end = end;
-        this.name = name;
-        this.classroom = classroom;
-        this.teacher = teacher;
-        this.type = type;
-        this.type2 = type2;
-    }
+    private List<String> absence;
 
     public Lesson() {
         this.begin = null;
@@ -31,6 +25,7 @@ public class Lesson {
         this.teacher = null;
         this.type = null;
         this.type2 = null;
+        this.absence = new ArrayList<>();
     }
 
     public void setBegin(String begin) {
@@ -59,6 +54,10 @@ public class Lesson {
 
     public void setType2(String type2) {
         this.type2 = type2;
+    }
+
+    public void addAbsence(String date) {
+        absence.add(date);
     }
 
     public String getBegin() {
@@ -99,4 +98,7 @@ public class Lesson {
         return type2;
     }
 
+    public List<String> getAbsence() {
+        return absence;
+    }
 }

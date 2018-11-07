@@ -32,7 +32,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
 
     static public ArrayList<Day> dayList;
     static public int lessonDayAmount = 7;
@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity  {
     static public String settingsFileName = "settings.xml";
     static public int defLessonDuration = 90;
     static public Settings settings;
+
+    private SwipeAdapter swipeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +94,7 @@ public class MainActivity extends AppCompatActivity  {
         lessonDayAmount = dayList.size();
         ViewPager viewPager = findViewById(R.id.view_pager);
 
-        SwipeAdapter swipeAdapter = new SwipeAdapter(getSupportFragmentManager());
+        swipeAdapter = new SwipeAdapter(getSupportFragmentManager());
         viewPager.setAdapter(swipeAdapter);
 
         Calendar calendar = Calendar.getInstance();
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity  {
         if (day < 0) {
             day += 7;
         }
-        if (day > dayList.size()-1) {
+        if (day > dayList.size() - 1) {
             viewPager.setCurrentItem(0);
         } else {
             viewPager.setCurrentItem(day);
@@ -109,7 +111,7 @@ public class MainActivity extends AppCompatActivity  {
         writeToXMLTimetableFile(this);
     }
 
-    public static void sortDayLessons (ArrayList<Day> list, int day) {
+    public static void sortDayLessons(ArrayList<Day> list, int day) {
         Collections.sort(list.get(day).getLessonList(), new Comparator<Lesson>() {
             @Override
             public int compare(Lesson l1, Lesson l2) {
@@ -130,15 +132,14 @@ public class MainActivity extends AppCompatActivity  {
         }
     }
 
-    private ArrayList<Day> parseXMLTimetable(XmlPullParser parser) throws XmlPullParserException,IOException
-    {
+    private ArrayList<Day> parseXMLTimetable(XmlPullParser parser) throws XmlPullParserException, IOException {
         ArrayList<Day> dayList = null;
         int eventType = parser.getEventType();
         Day currentDay;
 
-        while (eventType != XmlPullParser.END_DOCUMENT){
+        while (eventType != XmlPullParser.END_DOCUMENT) {
             String name;
-            switch (eventType){
+            switch (eventType) {
                 case XmlPullParser.START_DOCUMENT:
                     dayList = new ArrayList<>();
                     break;
@@ -163,7 +164,7 @@ public class MainActivity extends AppCompatActivity  {
         return dayList;
     }
 
-    private Day readDay(XmlPullParser parser, String dayName) throws  XmlPullParserException, IOException {
+    private Day readDay(XmlPullParser parser, String dayName) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, null, dayName);
 
         int eventType = parser.getEventType();
@@ -185,7 +186,7 @@ public class MainActivity extends AppCompatActivity  {
         return currentDay;
     }
 
-    private Lesson readLesson(XmlPullParser parser) throws  XmlPullParserException, IOException {
+    private Lesson readLesson(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, null, "lesson");
 
         int eventType = parser.getEventType();
@@ -218,6 +219,10 @@ public class MainActivity extends AppCompatActivity  {
                         case "type2":
                             currentLesson.setType2(parser.nextText());
                             break;
+                        case "absent":
+                            currentLesson.addAbsence(parser.nextText());
+                            break;
+
                     }
                     break;
             }
@@ -236,10 +241,10 @@ public class MainActivity extends AppCompatActivity  {
 
         xmlSerializer.startTag("", "timetable");
 
-        for (Day day: dayList) {
+        for (Day day : dayList) {
             xmlSerializer.startTag("", day.getName());
 
-            for (Lesson lesson: day.getLessonList()) {
+            for (Lesson lesson : day.getLessonList()) {
                 xmlSerializer.startTag("", "lesson");
 
                 xmlSerializer.startTag("", "beginTime");
@@ -270,9 +275,15 @@ public class MainActivity extends AppCompatActivity  {
                 xmlSerializer.text(lesson.getType2());
                 xmlSerializer.endTag("", "type2");
 
+                for (String s : lesson.getAbsence()) {
+                    xmlSerializer.startTag("", "absent");
+                    xmlSerializer.text(s);
+                    xmlSerializer.endTag("", "absent");
+                }
+
+
                 xmlSerializer.endTag("", "lesson");
             }
-
 
 
             xmlSerializer.endTag("", day.getName());
@@ -285,14 +296,13 @@ public class MainActivity extends AppCompatActivity  {
         return writer.toString();
     }
 
-    private Settings parseXMLSettings(XmlPullParser parser) throws XmlPullParserException,IOException
-    {
+    private Settings parseXMLSettings(XmlPullParser parser) throws XmlPullParserException, IOException {
         Settings newSettings = null;
         int eventType = parser.getEventType();
 
-        while (eventType != XmlPullParser.END_DOCUMENT){
+        while (eventType != XmlPullParser.END_DOCUMENT) {
             String name;
-            switch (eventType){
+            switch (eventType) {
                 case XmlPullParser.START_DOCUMENT:
                     newSettings = new Settings();
                     break;
@@ -300,45 +310,49 @@ public class MainActivity extends AppCompatActivity  {
                     name = parser.getName();
 
                     if (newSettings != null) {
-                        String visible = null;
                         switch (name) {
-                            case "timatable":
+                            case "timetable":
                                 newSettings.setCurrentTimetable(parser.nextText());
                                 break;
 
                             case "visibleMonday":
-                                visible = parser.nextText();
-                                newSettings.getVisibleDays()[0] = visible.equals("true");
+                                newSettings.getVisibleDays()[0] = parser.nextText().equals("true");
                                 break;
 
                             case "visibleTuesday":
-                                visible = parser.nextText();
-                                newSettings.getVisibleDays()[1] = visible.equals("true");
+                                newSettings.getVisibleDays()[1] = parser.nextText().equals("true");
                                 break;
 
                             case "visibleWednesday":
-                                visible = parser.nextText();
-                                newSettings.getVisibleDays()[2] = visible.equals("true");
+                                newSettings.getVisibleDays()[2] = parser.nextText().equals("true");
                                 break;
 
                             case "visibleThursday":
-                                visible = parser.nextText();
-                                newSettings.getVisibleDays()[3] = visible.equals("true");
+                                newSettings.getVisibleDays()[3] = parser.nextText().equals("true");
                                 break;
 
                             case "visibleFriday":
-                                visible = parser.nextText();
-                                newSettings.getVisibleDays()[4] = visible.equals("true");
+                                newSettings.getVisibleDays()[4] = parser.nextText().equals("true");
                                 break;
 
                             case "visibleSaturday":
-                                visible = parser.nextText();
-                                newSettings.getVisibleDays()[5] = visible.equals("true");
+                                newSettings.getVisibleDays()[5] = parser.nextText().equals("true");
                                 break;
 
                             case "visibleSunday":
-                                visible = parser.nextText();
-                                newSettings.getVisibleDays()[6] = visible.equals("true");
+                                newSettings.getVisibleDays()[6] = parser.nextText().equals("true");
+                                break;
+
+                            case "firstWarning":
+                                newSettings.setFirstWarning(Integer.valueOf(parser.nextText()));
+                                break;
+
+                            case "secondWarning":
+                                newSettings.setSecondWarning(Integer.valueOf(parser.nextText()));
+                                break;
+
+                            case "thirdWarning":
+                                newSettings.setThirdWarning(Integer.valueOf(parser.nextText()));
                                 break;
                         }
                     }
@@ -352,4 +366,10 @@ public class MainActivity extends AppCompatActivity  {
 
         return newSettings;
     }
+
+    public void addLesson(View view) {
+
+    }
+
+
 }
